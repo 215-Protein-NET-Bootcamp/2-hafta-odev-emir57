@@ -5,6 +5,11 @@ Validation Aspects ✔️<br>
 Log Aspects 📓<br>
 Exception Log Aspects ❌<br>
 <hr>
+<img src="images/23.png"/>
+<hr>
+<h5>Connection String</h5>
+<img src="images/24.png"/>
+<hr>
 <img src="images/1.png"/>
 <img src="images/2.png"/>
 <img src="images/3.png"/>
