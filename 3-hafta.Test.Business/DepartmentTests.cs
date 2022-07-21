@@ -19,6 +19,7 @@ namespace _3_hafta.Test.Business
 
             _mockDepartmentService.Setup(x => x.GetListAsync()).ReturnsAsync(new SuccessDataResult<List<DepartmentDto>>(_dbDepartmentDto));
             _mockDepartmentService.Setup(x => x.GetByIdAsync(It.IsAny<int>())).ReturnsAsync((int departmentId) => new SuccessDataResult<DepartmentDto>(getDepartmentById(departmentId)));
+            _mockDepartmentService.Setup(x => x.GetDepartmentsByEmployeeIdAsync(It.IsAny<int>())).ReturnsAsync((int employeeId) => new SuccessDataResult<List<DepartmentCountryDto>>(getDepartmentsByEmployeeId(employeeId).ToList()));
 
             _mockDepartmentService.Setup(x => x.AddAsync(It.IsAny<DepartmentDto>())).ReturnsAsync((DepartmentDto dto) => new SuccessResult());
             _mockDepartmentService.Setup(x => x.UpdateAsync(It.IsAny<int>(), It.IsAny<DepartmentDto>())).ReturnsAsync((int departmentId, DepartmentDto dto) => new SuccessResult());
@@ -38,6 +39,14 @@ namespace _3_hafta.Test.Business
         {
             var result = await _mockDepartmentService.Object.GetByIdAsync(id);
             Assert.NotEqual(result.Data, null);
+        }
+        [Theory]
+        [InlineData(1)]
+        public async void Get_departments_by_employee_id(int employeeId)
+        {
+            var employee = getEmployee();
+            var result = await _mockDepartmentService.Object.GetDepartmentsByEmployeeIdAsync(employee.DeptId);
+            Assert.Equal(result.Data.Count, 1);
         }
         [Fact]
         public async void Add_department()
@@ -76,6 +85,30 @@ namespace _3_hafta.Test.Business
                 new Department{DepartmentId=2,CountryId=1,DeptName="Protel"},
             };
         }
+        private List<Country> getCountryList()
+        {
+            return new List<Country>
+            {
+                new Country{CountryId=1,CountryName="Turkey",Continent="Asia",Currency="TRY"},
+                new Country{CountryId=2,CountryName="Germany",Continent="Europe",Currency="EURO"},
+                new Country{CountryId=3,CountryName="France",Continent="Europe",Currency="EURO"},
+            };
+        }
+        private IEnumerable<DepartmentCountryDto> getDepartmentsByEmployeeId(int employeeId)
+        {
+            var departmens = getDepartmentList().Where(x => x.DepartmentId == employeeId);
+            foreach (var department in departmens)
+            {
+                var country = getCountryList().SingleOrDefault(x => x.CountryId == department.CountryId);
+                yield return new DepartmentCountryDto
+                {
+                    DeptName = department.DeptName,
+                    CountryName = country.CountryName,
+                    Continent = country.Continent,
+                    Currency = country.Currency
+                };
+            }
+        }
 
         private DepartmentDto getDepartmentById(int id)
         {
@@ -85,6 +118,11 @@ namespace _3_hafta.Test.Business
                 CountryId = department.CountryId,
                 DeptName = department.DeptName
             };
+        }
+
+        private Employee getEmployee()
+        {
+            return new Employee { EmpID = 1, EmpName = "Emir", DeptId = 1 };
         }
     }
 }
