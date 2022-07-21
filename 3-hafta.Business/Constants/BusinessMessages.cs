@@ -13,5 +13,7 @@
         public static readonly string NotFoundEntity = "Bulunamadı";
         public static readonly string SuccessGet = "Getirme Başarılı";
         public static readonly string SuccessList = "Listeleme Başarılı";
+
+        public static readonly string CountryAlreadyExists = "Ülke zaten mevcut";
     }
 }
