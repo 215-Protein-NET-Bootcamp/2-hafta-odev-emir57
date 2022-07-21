@@ -1,4 +1,9 @@
 # 3-hafta-odev-emir57
+Async Programming ⚙️
+Aspect Oriented Programming ⚙️
+Validation Aspects ✔️
+Log Aspects 📓
+Exception Log Aspects ❌
 
 <hr>
 <img src="images/1.png"/>
