@@ -14,12 +14,10 @@ namespace _3_hafta.Business.Concrete
     {
         private readonly IEmployeeService _employeeService;
         private readonly ICountryService _countryService;
-        private readonly IDepartmentDal _departmentDal;
-        public DepartmentManager(IDepartmentDal entityRepository, IMapper mapper, IEmployeeService employeeService, ICountryService countryService, IDepartmentDal departmentDal) : base(entityRepository, mapper)
+        public DepartmentManager(IDepartmentDal entityRepository, IMapper mapper, IEmployeeService employeeService, ICountryService countryService) : base(entityRepository, mapper)
         {
             _employeeService = employeeService;
             _countryService = countryService;
-            _departmentDal = departmentDal;
         }
         [ValidationAspect(typeof(DepartmentValidator))]
         public override Task<IResult> AddAsync(DepartmentDto entity)
@@ -59,16 +57,6 @@ namespace _3_hafta.Business.Concrete
         public async override Task<IResult> UpdateAsync(int id, DepartmentDto entity)
         {
             return await base.UpdateAsync(id, entity);
-            //Department updatedEntity = await _departmentDal.GetByIdAsync(id);
-            //if (updatedEntity is null)
-            //    return new ErrorResult(BusinessMessages.NotFoundEntity);
-            //Mapper.Map(entity, updatedEntity);
-            //bool result = await _entityRepository.UpdateAsync(updatedEntity);
-            //if (result)
-            //    return new SuccessResult(BusinessMessages.SuccessUpdate);
-            //return new ErrorResult(BusinessMessages.UnSuccessUpdate);
         }
-
-
     }
 }
