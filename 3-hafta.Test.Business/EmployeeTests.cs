@@ -3,11 +3,6 @@ using _3_hafta.Dto.Concrete;
 using _3_hafta.Entity.Concrete;
 using Core.Utilities.Result;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _3_hafta.Test.Business
 {
@@ -85,23 +80,6 @@ namespace _3_hafta.Test.Business
                 new Employee{EmpID=4,EmpName="Oğuzhan",DeptId=3},
             };
         }
-        private List<DepartmentDto> getDepartmentDtoList()
-        {
-            return new List<DepartmentDto>
-            {
-                new DepartmentDto{CountryId=1,DeptName="Protein"},
-                new DepartmentDto{CountryId=1,DeptName="Protel"},
-            };
-        }
-        private List<Department> getDepartmentList()
-        {
-            return new List<Department>
-            {
-                new Department{DepartmentId=1,CountryId=1,DeptName="Protein"},
-                new Department{DepartmentId=2,CountryId=1,DeptName="Protel"},
-            };
-        }
-
         private EmployeeDto getEmployeeById(int id)
         {
             var employee = getEmployeeList().SingleOrDefault(x => x.EmpID == id);

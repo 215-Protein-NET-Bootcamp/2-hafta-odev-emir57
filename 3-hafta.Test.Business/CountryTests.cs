@@ -3,11 +3,6 @@ using _3_hafta.Dto.Concrete;
 using _3_hafta.Entity.Concrete;
 using Core.Utilities.Result;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _3_hafta.Test.Business
 {
