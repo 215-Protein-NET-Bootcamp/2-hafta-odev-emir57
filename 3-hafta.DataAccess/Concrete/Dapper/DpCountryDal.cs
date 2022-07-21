@@ -109,7 +109,7 @@ namespace _3_hafta.DataAccess.Concrete.Dapper
                     .SelectSchema(_schema)
                     .SelectTable(_table)
                     .SelectIdColumn(x => x.CountryId)
-                    .GenerateGetAllQuery();
+                    .GenerateGetByIdQuery(id);
                 if (con.State != System.Data.ConnectionState.Open)
                     con.Open();
                 return await con.QuerySingleOrDefaultAsync<Country>(query);
