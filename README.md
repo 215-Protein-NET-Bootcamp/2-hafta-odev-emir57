@@ -1,10 +1,9 @@
 # 3-hafta-odev-emir57
-Async Programming ⚙️
-Aspect Oriented Programming ⚙️
-Validation Aspects ✔️
-Log Aspects 📓
-Exception Log Aspects ❌
-
+Async Programming ⚙️<br>
+Aspect Oriented Programming ⚙️<br>
+Validation Aspects ✔️<br>
+Log Aspects 📓<br>
+Exception Log Aspects ❌<br>
 <hr>
 <img src="images/1.png"/>
 <img src="images/2.png"/>
