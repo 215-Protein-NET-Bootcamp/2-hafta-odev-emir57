@@ -48,7 +48,7 @@ namespace WriteParameter
             checkTable();
             checkSchema();
             string idPropertyName = getIdColumn();
-            return String.Format($"delete from {_schema}.{_tableName} where {idPropertyName}=@{idPropertyName}").Replace("ı", "i");
+            return String.Format($"delete from {_schema}.{_tableName} where \"{idPropertyName}\"=@{idPropertyName}").Replace("ı", "i");
         }
         public virtual string GenerateGetAllQuery()
         {
@@ -95,10 +95,10 @@ namespace WriteParameter
         {
             checkTable();
             checkSchema();
-            string parameters = getParametersWithId();
+            string parameters = getParametersWithId("\"", "\"");
             string idColumn = getIdColumn();
-            string predicate = id == null ? $"{idColumn.ToLower()}=@{idColumn}" : $"{idColumn.ToLower()}={id}";
-            string query = String.Format($"select {parameters} from {_schema}.{_tableName} where {predicate}");
+            string predicate = id == null ? $"\"{idColumn}\"=@{idColumn}" : $"\"{idColumn}\"={id}";
+            string query = String.Format($"SELECT {parameters} FROM {_schema}.{_tableName} WHERE {predicate}");
             return query.Replace("ı", "i");
         }
 
@@ -166,15 +166,15 @@ namespace WriteParameter
             var properties = _properties.Count == 0 ? typeof(TEntity).GetProperties().ToList() : _properties;
             string idPropertyName = getIdColumn();
 
-            string updateQuery = String.Join(",", properties.Select(p => p.Name == idPropertyName ? "" : $"{p.Name}=@{p.Name}"));
+            string updateQuery = String.Join(",", properties.Select(p => p.Name == idPropertyName ? "" : $"\"{p.Name}\"=@{p.Name}"));
 
             updateQuery = updateQuery.StartsWith(",") ? updateQuery.Substring(1) : updateQuery;
-            updateQuery += String.Concat(" ", $"WHERE {idPropertyName}=@{idPropertyName}");
+            updateQuery += String.Concat(" ", $"WHERE \"{idPropertyName}\"=@{idPropertyName}");
             return $"set {updateQuery}";
         }
         protected virtual string insertIntoWriteParameters()
         {
-            string columns = getParametersWithoutId();
+            string columns = getParametersWithoutId("\"", "\"");
             string valueColumns = getParametersWithoutId("@");
             return $"({columns}) VALUES ({valueColumns})";
         }

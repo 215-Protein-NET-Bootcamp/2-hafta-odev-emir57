@@ -41,7 +41,6 @@ namespace _3_hafta.Business.Concrete
             if (result)
                 return new SuccessResult(BusinessMessages.SuccessUpdate);
             return new ErrorResult(BusinessMessages.UnSuccessUpdate);
-
         }
 
         public async Task<IResult> DeleteAsync(int id)

@@ -110,7 +110,7 @@ namespace _3_hafta.DataAccess.Concrete.Dapper
                     .SelectSchema(_schema)
                     .SelectTable(_table)
                     .SelectIdColumn(x => x.DepartmentId)
-                    .GenerateGetAllQuery();
+                    .GenerateGetByIdQuery(id);
                 if (con.State != System.Data.ConnectionState.Open)
                     con.Open();
                 return await con.QuerySingleOrDefaultAsync<Department>(query);
