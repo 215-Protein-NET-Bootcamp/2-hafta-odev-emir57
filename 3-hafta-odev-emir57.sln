@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-hafta.Business", "3-hafta.Business\3-hafta.Business.csproj", "{B193863C-6192-4054-A186-CF741BC5A8A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-hafta.Business", "3-hafta.Business\2-hafta.Business.csproj", "{B193863C-6192-4054-A186-CF741BC5A8A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-hafta.DataAccess", "3-hafta.DataAccess\3-hafta.DataAccess.csproj", "{515D1801-1B73-430A-9A51-E65BBEABDA3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-hafta.DataAccess", "3-hafta.DataAccess\2-hafta.DataAccess.csproj", "{515D1801-1B73-430A-9A51-E65BBEABDA3C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-hafta.Entity", "3-hafta.Entity\3-hafta.Entity.csproj", "{E2280696-CC53-4969-AD14-164BCD6F9F06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-hafta.Entity", "3-hafta.Entity\2-hafta.Entity.csproj", "{E2280696-CC53-4969-AD14-164BCD6F9F06}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{5490687C-514A-4693-9ABB-128D92AFA423}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-hafta.Dto", "3-hafta.Dto\3-hafta.Dto.csproj", "{C0C8F1B6-051E-4B79-9DE0-EC8EB5B0EC8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-hafta.Dto", "3-hafta.Dto\2-hafta.Dto.csproj", "{C0C8F1B6-051E-4B79-9DE0-EC8EB5B0EC8E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-hafta.WebApi", "3-hafta.WebApi\3-hafta.WebApi.csproj", "{8A6ED9CB-A900-4846-8937-14FC9583F5B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-hafta.WebApi", "3-hafta.WebApi\2-hafta.WebApi.csproj", "{8A6ED9CB-A900-4846-8937-14FC9583F5B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-hafta.Test.Business", "3-hafta.Test.Business\3-hafta.Test.Business.csproj", "{5AE09A0A-B22B-4D14-B8B2-32D784F4B8F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-hafta.Test.Business", "3-hafta.Test.Business\2-hafta.Test.Business.csproj", "{5AE09A0A-B22B-4D14-B8B2-32D784F4B8F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

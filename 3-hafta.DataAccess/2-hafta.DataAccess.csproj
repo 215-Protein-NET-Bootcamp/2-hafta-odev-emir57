@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\3-hafta.Entity\3-hafta.Entity.csproj" />
+    <ProjectReference Include="..\3-hafta.Entity\2-hafta.Entity.csproj" />
   </ItemGroup>
 
 </Project>

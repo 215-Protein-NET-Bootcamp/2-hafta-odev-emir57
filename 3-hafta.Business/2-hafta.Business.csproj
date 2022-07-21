@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\3-hafta.DataAccess\3-hafta.DataAccess.csproj" />
-    <ProjectReference Include="..\3-hafta.Dto\3-hafta.Dto.csproj" />
+    <ProjectReference Include="..\3-hafta.DataAccess\2-hafta.DataAccess.csproj" />
+    <ProjectReference Include="..\3-hafta.Dto\2-hafta.Dto.csproj" />
   </ItemGroup>
 
 </Project>

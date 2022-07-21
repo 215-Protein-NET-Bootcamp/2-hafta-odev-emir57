@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\3-hafta.Business\3-hafta.Business.csproj" />
+    <ProjectReference Include="..\3-hafta.Business\2-hafta.Business.csproj" />
   </ItemGroup>
 
 </Project>
