@@ -105,7 +105,8 @@ namespace WriteParameter
         public virtual IQueryGenerate<TEntity> SelectColumn<TProperty>(Expression<Func<TEntity, TProperty>> predicate)
         {
             PropertyInfo propertyInfo = (predicate.Body as MemberExpression).Member as PropertyInfo;
-            _properties.Add(propertyInfo);
+            if (propertyInfo != null)
+                _properties.Add(propertyInfo);
             return this;
         }
 
