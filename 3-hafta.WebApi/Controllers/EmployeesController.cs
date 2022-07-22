@@ -44,7 +44,7 @@ namespace _3_hafta.WebApi.Controllers
         }
 
         [HttpGet("{employeeId}/departments")]
-        public async Task<IActionResult> GetDepartmends([FromRoute] int employeeId)
+        public async Task<IActionResult> GetDepartments([FromRoute] int employeeId)
         {
             var result = await _departmentService.GetDepartmentsByEmployeeIdAsync(employeeId);
             if (result.Success)
