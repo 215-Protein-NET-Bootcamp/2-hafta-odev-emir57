@@ -24,13 +24,11 @@ namespace Core.DataAccess.EntityFramework
 
         public async Task AddRangeAsync(IEnumerable<TEntity> entities)
         {
-            await Task.Run(() =>
+            using (var context = new TContext())
             {
-                using (var context = new TContext())
-                {
-                    context.Set<TEntity>().AddRange(entities);
-                }
-            });
+                context.Set<TEntity>().AddRange(entities);
+                await context.SaveChangesAsync();
+            }
         }
 
         public async Task<bool> DeleteAsync(TEntity entity)
@@ -49,13 +47,11 @@ namespace Core.DataAccess.EntityFramework
 
         public async Task DeleteRangeAsync(IEnumerable<TEntity> entities)
         {
-            await Task.Run(() =>
+            using (var context = new TContext())
             {
-                using (var context = new TContext())
-                {
-                    context.Set<TEntity>().RemoveRange(entities);
-                }
-            });
+                context.Set<TEntity>().RemoveRange(entities);
+                await context.SaveChangesAsync();
+            }
         }
 
         public async Task<List<TEntity>> GetAllAsync()
@@ -90,13 +86,11 @@ namespace Core.DataAccess.EntityFramework
 
         public async Task UpdateRangeAsync(IEnumerable<TEntity> entities)
         {
-            await Task.Run(() =>
+            using (var context = new TContext())
             {
-                using (var context = new TContext())
-                {
-                    context.Set<TEntity>().UpdateRange(entities);
-                }
-            });
+                context.Set<TEntity>().UpdateRange(entities);
+                await context.SaveChangesAsync();
+            }
         }
     }
 }
