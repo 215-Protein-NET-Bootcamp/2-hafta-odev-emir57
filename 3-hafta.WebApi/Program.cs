@@ -14,9 +14,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+//AutoMapper
 builder.Services.AddAutoMapper(typeof(BusinessMapper));
 
+//Dapper Context
 builder.Services.AddScoped<DpPatikaDbContext>();
+
+//Autofac
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
     .ConfigureContainer<ContainerBuilder>(builder =>
     {
