@@ -1,4 +1,4 @@
-# 3-hafta-odev-emir57
+# 2-hafta-odev-emir57
 Async Programming ⚙️<br>
 Aspect Oriented Programming ⚙️<br>
 Validation Aspects ✔️<br>
